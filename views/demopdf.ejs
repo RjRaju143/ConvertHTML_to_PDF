@@ -19,9 +19,9 @@
             <th>address</th>
         </tr>
         <tr>
-            <td><%= data%></td>  <!--id-->
-            <td><%= data%></td>        <!--name-->
-            <td><%= data%></td>       <!--address-->
+            <td><%= dataId%></td>  <!--id-->
+            <td><%= dataName%></td>
+            <td><%= dataAddress%></td>
         </tr>
     </table>
     <style>
@@ -38,6 +38,16 @@
             text-align: center;
         }
     </style>
+    <script>
+         const dbdata = {
+        empid:97,
+        name:"raju",
+        address:"earth."
+    }
+
+    const empId = dbdata.empid;
+    console.log(empId)
+    </script>
 </body>
 </html>
 
