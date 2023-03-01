@@ -31,15 +31,22 @@ app.get('/code',(req,res)=>{
   res.render('home')
 });
 
-// Report PDF
-app.post('/Report', (req, res) => {
+//// Report PDF
+app.post('/Reports', async(req, res) => {
+    const data = new db({
+      empid:req.body.articleId,
+      name:req.body.articleName,
+      address:req.body.articleAddress
+    })
+    const userData = await data.save();
+    console.log(userData);
   let now = new Date();
   const fileName = `${now.getFullYear()}-${now.getMonth() + 1}-${now.getDate()}_${now.getHours()}-${now.getMinutes()}-${now.getSeconds()}`;
   res.render('demopdf', {
     dataId: req.body.articleId,
     dataName: req.body.articleName,
-    dataAddress: req.body.articleAddress,
-  }, function (err, html) {
+    dataAddress: req.body.articleAddress
+  },function (err, html) {
     pdf.create(html, options).toFile(`./public/pdfFiles/${fileName}.pdf`, function (err, result) {
       if (err) {
         console.log(err);
@@ -54,6 +61,37 @@ app.post('/Report', (req, res) => {
   });
 });
 
+app.get('/Report/:id',(req,res)=>{
+  res.send(`still in dev.. stage..`)
+})
+
+
+// // Report PDF ORIGNALLL
+// app.post('/Reports', (req, res) => {
+//   let now = new Date();
+//   const fileName = `${now.getFullYear()}-${now.getMonth() + 1}-${now.getDate()}_${now.getHours()}-${now.getMinutes()}-${now.getSeconds()}`;
+//   res.render('demopdf', {
+//     dataId: req.body.articleId,
+//     dataName: req.body.articleName,
+//     dataAddress: req.body.articleAddress
+//   }, function (err, html) {
+//     pdf.create(html, options).toFile(`./public/pdfFiles/${fileName}.pdf`, function (err, result) {
+//       if (err) {
+//         console.log(err);
+//         res.status(500).send('Internal Server Error');
+//       } else {
+//         var datafile = fs.readFileSync(`./public/pdfFiles/${fileName}.pdf`);
+//         res.contentType('application/pdf');
+//         res.send(datafile);
+//         console.log(fileName);
+//       }
+//     });
+//   });
+// });
+
+
+
+
 
 
 //////// API /////////
@@ -63,7 +101,7 @@ app.post('/api/data', async (req, res) => {
   const data = new db({
     empid: req.body.empid,
     name: req.body.name,
-    address: req.body.address,
+    address: req.body.address
   });
   try {
     const values = await data.save();
@@ -107,7 +145,9 @@ app.use((req, res) => {
 });
 
 // port
-var port = process.env.PORT || 4646;
-app.listen(port,()=>console.log(`server listening on port ${port}`));
+var port = process.env.PORT || 8899;
+app.listen(port,()=>{
+  console.log(`server listening on http://127.0.0.1:${port}`)
+});
 
 
