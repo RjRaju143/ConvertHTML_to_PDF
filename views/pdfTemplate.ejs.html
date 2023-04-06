@@ -1,0 +1,30 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>DemoPdf</title>
+</head>
+<body>
+    <div>
+        <div style="margin-left:40%;font-size:small;">
+                <h3>Ultron</h3>
+        </div>
+        <div style="color: red;">Disclaimer: © Copyright "+ String.valueOf(Calendar.getInstance().get(Calendar.YEAR)) +" The DataFlow Group. All rights reserved. No part of this publication may be reproduced without the express prior consent of the DataFlow Group." </div>
+     <P style="margin:0px 15px 0px 15px;font-family:Times New Roman;font-weight:lighter;font-size:medium;"><%= data%></P>
+    </div>
+</body>
+</html> 
+
+<table>
+    <tr>
+        <th>id</th>
+        <th>name</th>
+        <th>address</th>
+    </tr>
+    <tr>
+        <td><%= dataId%></td>  <!--id-->
+        <td><%= dataName%></td>
+        <td><%= dataAddress%></td>
+    </tr>
+</table>

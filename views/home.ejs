@@ -1,0 +1,66 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>RjRaju</title>
+    <link rel="stylesheet" href="https://bootswatch.com/4/flatly/bootstrap.css">
+    <link rel="stylesheet" href="https://bootswatch.com/_assets/css/custom.min.css">
+</head>
+<body class="bg-primary">
+      <div class="contanierr">
+        <center><h2>Fill Some Data For Report</h2></center>
+        <br>
+            <div>
+                  <form action="/Reports" method="POST">
+                  <center><input type="text" placeholder="Enter Id" name="articleId" id="articleId" style="word-wrap:break-word"></center>
+                    <br>
+                    <center><input type="text" placeholder="Enter name" name="articleName" id="articleName" style="word-wrap:break-word"></center>
+                    <br>
+                    <center><input type="text" placeholder="Enter address" name="articleAddress" id="articleAddress" style="word-wrap:break-word"></center>
+                    <br>
+                    <center><button type="submit" class="btn btn-primary">Submit</button></center>
+                  </form>
+            </div>
+          </div>
+    <style>
+      body{
+        background: url('../public/img/header.jpg');
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+      }
+      form{
+        position: absolute;
+        transform: translate(-50%,-50%);
+        top: 50%;
+        left: 50%;
+        box-shadow: 0 0 40px rgba(8,7,16,0.6);
+        padding: 50px 35px;
+      }
+      form *{
+        font-family: 'Poppins',sans-serif;
+        color: #000000;
+        letter-spacing: 0.5px;
+        outline: none;
+        border: none;
+      }
+      input{
+        box-shadow: 0 0 5px rgba(8, 7, 16, 0.38);
+        display: block;
+        height: 50px;
+        width: 100%;
+        background-color: rgba(255,255,255,0.07);
+        border-radius: 3px;
+        padding: 0 10px;
+        margin-top: 8px;
+        font-size: 14px;
+        font-weight: 300;
+      }
+      ::placeholder{
+        color: #000000;
+      }
+
+    </style>
+  </body>
+</html>

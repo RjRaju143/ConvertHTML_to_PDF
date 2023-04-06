@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" type="image/x-icon" href="public/img/icon.png">
+    <title>ultron</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
+    <link href="public/css/nucleo-svg.css" rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
+    <link href="public/css/nucleo-svg.css" rel="stylesheet" />
+    <link id="pagestyle" href="public/css/soft-ui-dashboard.css?v=1.0.5" rel="stylesheet" />
+  </head>
+</head>
+<body>
+  <img src="https://tryhackme-images.s3.amazonaws.com/room-icons/0ff6ea9ed7ccf51df6411cf1b57ba0fb.jpeg" alt="no">
+    <div>
+        <h1><center>Ultron Damage Report</center></h1>
+    </div>
+      <img src='file:///D:/node/ConvertHTML_to_PDF/public/img/QrCode.jpg' alt="qrcode">
+      <img src='https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg'>
+      <table style="width:100%">
+        <tr>
+          <th style="background-color: gray;">id</th>
+          <td><%= dataId%></td>
+        </tr>
+        <tr>
+          <th style="background-color: gray;">name</th>
+          <td><%= dataName%></td>
+        </tr>
+        <tr>
+          <th style="background-color: gray;">address</th>
+          <td><%= dataAddress%></td>
+        </tr>
+      </table>
+    <style>
+        img{
+            height: 80px;
+            top: -5%;
+        }
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+           
+        }
+        table{
+            width: 100%;
+            text-align: center;
+        }
+
+    </style>
+</body>
+</html>
